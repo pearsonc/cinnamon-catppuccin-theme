@@ -50,3 +50,5 @@ sudo -u $USERNAME DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$(id -u $USERNAM
 rm -rf /tmp/.cinnamon
 rm -rf /tmp/.local
 rm -rf /tmp/cinnamon-config
+
+cp /tmp/workspace-switcher.json /home/chperso/.cinnamon/configs/workspace-switcher@cinnamon.org/63.json

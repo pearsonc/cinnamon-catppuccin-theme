@@ -1,4 +1,4 @@
-VERSION := 1.0.28-1
+VERSION := 1.0.30-1
 PACKAGE_NAME := cinnamon-catppuccin-theme
 DEBIAN_PACKAGE_DIR := bin/$(PACKAGE_NAME)_$(VERSION)_amd64
 DEBIAN_CONTROL_FILE_SRC := package_metadata/control
@@ -9,12 +9,13 @@ FONTS_DIR = $(DEBIAN_PACKAGE_DIR)/usr/share/fonts
 WALLPAPERS_DIR = $(DEBIAN_PACKAGE_DIR)/usr/share/backgrounds/
 WALLPAPER_PROPERTIES_DIR = $(DEBIAN_PACKAGE_DIR)/usr/share/cinnamon-background-properties/
 TMP_DIR = $(DEBIAN_PACKAGE_DIR)/tmp
+APPLETs_CONFIG_DIR =
 
 
 # Main targets
 .PHONY: build clean
 
-build: setup_build_environment copy_control_file copy_theme_files copy_icon_files copy_font_files copy_wallpaper_files copy_cinnamon_dconf build_deb
+build: setup_build_environment copy_control_file copy_theme_files copy_icon_files copy_font_files copy_wallpaper_files copy_cinnamon_dconf copy_applet_configs build_deb
 
 setup_build_environment:
 	@mkdir -p $(DEBIAN_PACKAGE_DIR)/DEBIAN
@@ -47,6 +48,9 @@ copy_wallpaper_files:
 copy_cinnamon_dconf:
 	@cp -r "theme-files/cinnamon-applet-config" $(TMP_DIR)
 	@cp -r "theme-files/cinnamon-config" $(TMP_DIR)
+
+copy_applet_configs:
+	@cp -r "workspace-switcher.json" $(TMP_DIR)
 
 
 build_deb:
