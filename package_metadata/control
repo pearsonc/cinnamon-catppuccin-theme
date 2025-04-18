@@ -1,0 +1,9 @@
+Package: cinnamon-catppuccin-theme
+Version: 1.0.25-2
+Section: theme
+Priority: optional
+Architecture: amd64
+Depends: nautilus, nautilus-admin, nautilus-extension-gnome-terminal, rsync
+Maintainer: Chris Pearson <chris@nerdexecutive.com>
+Homepage: https://www.nerdexecutive.com
+Description: A package to manage the install of cinnamon-catppuccin-theme
