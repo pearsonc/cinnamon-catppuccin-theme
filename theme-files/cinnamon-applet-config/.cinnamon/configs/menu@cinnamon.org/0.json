@@ -117,7 +117,7 @@
             }
         ],
         "default_category": "Linux Mint",
-        "value": "/home/cinnamon/.local/share/icons/start-menu-icon/quad-grid.svg"
+        "value": "1CD8_rundll32.0-symbolic"
     },
     "menu-icon-size": {
         "type": "spinbutton",
@@ -143,7 +143,7 @@
         "default": false,
         "description": "Use a fixed menu height",
         "tooltip": "Keep the size of the menu the same no matter how many favorites or categories there are.",
-        "value": true
+        "value": false
     },
     "menu-height": {
         "type": "spinbutton",
@@ -154,7 +154,7 @@
         "units": "px",
         "description": "Menu height",
         "dependency": "restrict-menu-height",
-        "value": 420.0
+        "value": 550
     },
     "show-category-icons": {
         "type": "switch",
@@ -208,7 +208,7 @@
         "units": "px",
         "description": "Favorites icon size",
         "dependency": "favbox-show",
-        "value": 32
+        "value": 24.0
     },
     "show-favorites": {
         "type": "switch",
@@ -222,14 +222,14 @@
         "default": true,
         "description": "Show bookmarks and places",
         "tooltip": "Choose whether or not to show bookmarks and places in the menu.",
-        "value": false
+        "value": true
     },
     "show-recents": {
         "type": "switch",
         "default": true,
         "description": "Show recents",
         "tooltip": "Choose whether or not to show recents in the menu.",
-        "value": false
+        "value": true
     },
     "category-hover": {
         "type": "switch",
@@ -250,7 +250,7 @@
         "default": false,
         "description": "Enable filesystem path entry in search box",
         "tooltip": "Allows path entry in the menu search box.",
-        "value": false
+        "value": true
     },
     "force-show-panel": {
         "type": "switch",

@@ -7,6 +7,26 @@ echo "Post install and configuration script running now"
 echo "SET: new window placement mode to centre screen"
 dconf write /org/cinnamon/muffin/placement-mode "'center'"
 
+# Setting default applications
+#File manager to Nautilus
+xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search
+# Video files to VLC
+xdg-mime default vlc.desktop video/mp4
+xdg-mime default vlc.desktop video/x-matroska
+xdg-mime default vlc.desktop video/x-msvideo
+xdg-mime default vlc.desktop video/x-flv
+xdg-mime default vlc.desktop video/webm
+xdg-mime default vlc.desktop video/quicktime
+xdg-mime default vlc.desktop video/x-ms-wmv
+#Audio files to Rhythmbox
+xdg-mime default org.gnome.Rhythmbox3.desktop audio/mpeg
+xdg-mime default org.gnome.Rhythmbox3.desktop audio/x-wav
+xdg-mime default org.gnome.Rhythmbox3.desktop audio/flac
+xdg-mime default org.gnome.Rhythmbox3.desktop audio/x-vorbis+ogg
+xdg-mime default org.gnome.Rhythmbox3.desktop audio/mp4
+xdg-mime default org.gnome.Rhythmbox3.desktop audio/x-ms-wma
+
+
 echo "Setting permissions"
 chown -R root:root /usr/share/cinnamon-background-properties
 chown -R root:root /usr/share/backgrounds/linuxmint-catppuccin
@@ -34,13 +54,17 @@ while true; do
 done
 
 # Proceed with user-specific operations
-cp -r /tmp/.cinnamon/ /home/$USERNAME/
+cp -r /tmp/.cinnamon/configs/* /home/$USERNAME/.config/cinnamon/spices
 cp -r /tmp/.local/ /home/$USERNAME/
 cp -r /tmp/cinnamon-config/ /home/$USERNAME/
 
-chown -R $USERNAME:$USERNAME /home/$USERNAME/.cinnamon
+chown -R $USERNAME:$USERNAME /home/$USERNAME/.config/cinnamon/spices
 chown -R $USERNAME:$USERNAME /home/$USERNAME/.local
 chown -R $USERNAME:$USERNAME /home/$USERNAME/cinnamon-config
+
+chmod -R u+rwX,go-rwx /home/$USERNAME/.config/cinnamon/spices
+chmod -R u+rwX,go-rwx /home/$USERNAME/.local
+chmod -R u+rwX,go-rwx /home/$USERNAME/cinnamon-config
 
 # Load dconf settings as the user
 sudo -u $USERNAME DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$(id -u $USERNAME)/bus" \
@@ -50,5 +74,4 @@ sudo -u $USERNAME DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$(id -u $USERNAM
 rm -rf /tmp/.cinnamon
 rm -rf /tmp/.local
 rm -rf /tmp/cinnamon-config
-
-cp /tmp/workspace-switcher.json /home/chperso/.cinnamon/configs/workspace-switcher@cinnamon.org/63.json
+rm -rf /home/$USERNAME/cinnamon-config
