@@ -1,4 +1,4 @@
-VERSION := 1.0.58-1
+VERSION := 1.0.1-1
 PACKAGE_NAME := cinnamon-catppuccin-theme
 DEBIAN_PACKAGE_DIR := bin/$(PACKAGE_NAME)_$(VERSION)_amd64
 DEBIAN_CONTROL_FILE_SRC := package_metadata/control
