@@ -1,8 +1,4 @@
 # cinnamon-catppuccin-theme
 
-
-Set no desktop icons
-
-Set window mode to centre
-
-set nautilus as the default file manager
+@TODO Set no desktop icons
+@TODO install Glava via apt rather than compile
