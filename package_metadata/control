@@ -1,9 +1,9 @@
 Package: cinnamon-catppuccin-theme
-Version: 1.0.36-2
+Version: 1.0.58-2
 Section: theme
 Priority: optional
 Architecture: amd64
-Depends: nautilus, nautilus-admin, nautilus-extension-gnome-terminal, rsync
+Depends: nautilus, nautilus-admin, nautilus-extension-gnome-terminal, rsync, vlc, plank, conky-all, jq, curl, moc, libgl1-mesa-dev, libpulse0, libpulse-dev, libxext6, libxext-dev, libxrender-dev, libxcomposite-dev, liblua5.3-dev, lua-lgi, lua-filesystem, libobs0, libobs-dev, meson, build-essential, gcc, git
 Maintainer: Chris Pearson <chris@nerdexecutive.com>
 Homepage: https://www.nerdexecutive.com
 Description: A package to manage the install of cinnamon-catppuccin-theme
