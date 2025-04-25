@@ -12,6 +12,7 @@ sudo apt-get install -f /full/path/to/your/download/cinnamon-catppuccin-theme_1.
 ```
 
 A reboot or a restart of Cinnamon may be required for some fonts to apply correctly. I have had issues with this, and the automation of restarting Cinnamon seems to fail.
+Further development to include the installation and configuration of Glava will follow in later releases.
 
 ```bash
 sudo reboot
